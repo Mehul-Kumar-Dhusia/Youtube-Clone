@@ -2,6 +2,7 @@
 
 ::-webkit-scrollbar {
   width: 8px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -9,16 +10,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #606060; 
+  background: #9a9999; 
   border-radius: 10px;
   padding: 1px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #cccccc; 
+} 
+
+::-webkit-scrollbar-track:horizontal{
+	background-color: white;
 }
 
-::-ms-scrollbar {
+/* ::-ms-scrollbar {
   width: 8px;
 }
 
@@ -52,7 +57,7 @@
 
 ::-moz-scrollbar-thumb:hover {
   background: #cccccc; 
-}
+} */
 
 
 body {
@@ -70,7 +75,6 @@ body {
 	display: flex;
 	justify-content: space-between;
 	height: 56px;
-	/*margin-right: 10px;*/
 	overflow: hidden;
 	background-color: #fff;
 }
@@ -303,15 +307,15 @@ hr {
 	display: flex;
 	width: 100%;
 	height: 54px;
-	position: -webkit-fixed;
 	position: fixed;
 	left: 240px;
 	top: 56px;
-  overflow: hidden;
- 	align-items: center;
- 	justify-content: flex-start;
- 	border-top: 1px solid #e5e5e5;
- 	border-bottom: 1px solid #e5e5e5;
+	align-items: center;
+	justify-content: flex-start;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	flex-wrap: nowrap;
+	overflow: hidden;
 }
 
 .navbar-element {
@@ -340,7 +344,6 @@ hr {
 .btm-nav {
 	height: 50px;
 	width: 100%;
-	/*padding-bottom: 10px;*/
 	position: fixed;	
 	bottom: 0;
 	left: 0;
@@ -386,10 +389,6 @@ hr {
 }
 
 .videos-container {
-	/*display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	flex-wrap: wrap;*/
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 	grid-column: span 4;
@@ -416,6 +415,8 @@ hr {
 	height: 100%;
 	width: 100%;	
 }
+
+
 
 .video-icon {
 	object-fit: cover;
@@ -527,6 +528,30 @@ hr {
 		height: 24px;
 		width: 24px;
 	}
+
+	.btm-nav {
+		display: flex;
+		justify-content: space-around;
+		z-index: 1;
+		padding: 10px;
+		border-top: 1px solid rgb(186, 186, 186);
+	}
+	.right-margin{
+		margin-right: 20px;
+	}
+	.btm-btn-span{
+		font-size: 0.8rem;
+		font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	}
+	.header-navbar{
+		overflow-x: scroll;
+	}
+	::-webkit-scrollbar-track{
+		background-color: white;
+	}
+	::-webkit-scrollbar-thumb{
+		background-color: white;
+	}
 }
 
 @media (max-width: 425px) {
@@ -559,12 +584,31 @@ hr {
 		display: none;
 	}
 
-	.btm-nav {
-		display: flex;
-		z-index: 1;
-	}
+	
 
 	.videos-container {
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	}
+}
+
+
+
+.title p{
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 0.7rem;
+	font-weight: 600;
+	margin-bottom: 3px;
+}
+.title span{
+	font-size: .77rem;
+}
+.author img{
+	border-radius: 100%;
+}
+a{
+	text-decoration: none;
+}
+.title p{
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
