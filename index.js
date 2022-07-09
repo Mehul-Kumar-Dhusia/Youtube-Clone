@@ -115,6 +115,56 @@ information.forEach(data =>{
     title.appendChild(view) ;
 })
 
+let title = document.getElementsByClassName('title') ;
+let videoContain = document.getElementById('video-container') ;
+let input = document.getElementById('search-bar') ;
+
+input.addEventListener('keyup' , (e) =>{
+    let value = e.target.value ;
+    console.log(e.key);
+    let valueGiven = value.toLowerCase() ;
+    for(i = 0 ; i < title.length ; i++){
+        let titleOfVideo = title[i].firstElementChild ;
+        let textToCompare = titleOfVideo.textContent.toLowerCase() ;
+        if(textToCompare.indexOf(valueGiven) != -1){
+            title[i].parentElement.parentElement.style.display = "block" ;
+            
+        }
+        else{
+            title[i].parentElement.parentElement.style.display = "none" ;
+        }
+    }
+    if(e.key == 'Enter'){
+        videoContain.style.display = 'block' ;
+    }
+    if(e.key == 'Backspace'){
+        videoContain.style.display = 'grid' ;
+    }
+
+})
+
+let userD = document.getElementById('user-d') ;
+
+let header = document.getElementById('header') ;
+
+let searchIcon = document.getElementById('search-icon') ;
+
+let headerNavbar = document.getElementById('header-navbar') ;
+
+let mainContent = document.getElementById('main-content') ;
+
+searchIcon.addEventListener('click' , () =>{
+    header.firstElementChild.style.display = "none" ;
+    userD.style.display = "none" ;
+    input.style.display = "block" ;
+    header.style.paddingLeft = "10px" ;
+    searchIcon.style.marginRight = "10px" ;
+    headerNavbar.style.display = "none" ;
+    mainContent.style.marginTop = "0px" ;
+    mainContent.style.top = "50px" ;
+
+})
+
 
 
 
